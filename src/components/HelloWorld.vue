@@ -57,6 +57,7 @@
   export default {
     components: {NumericalValuesComponent, CustomCard},
     data () {
+      // all properties defined here are reactive by default
       return {
           returnedMessage: null,
           reactiveMessage: 0,
@@ -71,6 +72,7 @@
         }
     },
     methods: {
+        // any custom methods for your component
         increaseReactiveMessage(){
             console.log(this.reactiveMessage);
             this.reactiveMessage = this.reactiveMessage +1;
@@ -88,9 +90,11 @@
         }
     },
     created() {
+      // initialised after component were created, so any properties added are not reactive
       this.nonReactiveMessage = 0;
     },
     mounted () {
+      //  set reactive property value
       this.reactiveMessage = 3;
     },
   }
